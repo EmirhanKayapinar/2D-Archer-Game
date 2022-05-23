@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3541206209576949047}
   - component: {fileID: 3541206209576949048}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pngwing.com (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 3541206209582832957}
   - component: {fileID: 3541206209582832958}
   - component: {fileID: 3541206209582832959}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mob_4_00000
-  m_TagString: Dusman
+  m_TagString: Dusman1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

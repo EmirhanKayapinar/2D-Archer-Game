@@ -9,6 +9,8 @@ public class OkSpawn : MonoBehaviour
     [SerializeField] Transform _okSpawner;
     [SerializeField] Rigidbody2D _okrigid;
     [SerializeField] Animator _anim;
+    [SerializeField] Transform _raycastTrans;
+    
     float _mana;
     public void OkSpawner()
     {
@@ -40,6 +42,9 @@ public class OkSpawn : MonoBehaviour
          _isAttack = false;
     
     }
+    
+    
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))

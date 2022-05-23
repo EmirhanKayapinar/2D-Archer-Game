@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float _maxDistance;
     [SerializeField] LayerMask _kaleLayer;
     [SerializeField] Transform _raycastTrans;
+    public bool _ok;
     void EnemyMoveUp()
     {
         _rigid.velocity = Vector2.up * _upSpeed * Time.deltaTime;
@@ -26,6 +27,7 @@ public class EnemyController : MonoBehaviour
     public void Enemystop()
     {
         _rigid.velocity = Vector2.left*0;
+        _rigid.constraints = RigidbodyConstraints2D.FreezeAll;
     }
     private void FixedUpdate()
     {
@@ -61,6 +63,7 @@ public class EnemyController : MonoBehaviour
             _rigid.bodyType = RigidbodyType2D.Kinematic;
             _anim.Play("EnemyWalk");
         }
+       
     }
 
     public void Raycast()
@@ -68,15 +71,18 @@ public class EnemyController : MonoBehaviour
         RaycastHit2D _hit = Physics2D.Raycast(_raycastTrans.position, _raycastTrans.forward, _maxDistance, _kaleLayer);
         Debug.DrawRay(_raycastTrans.position, _raycastTrans.forward * _maxDistance, Color.red);
 
-        if (_hit.collider != null)
+        if (_hit.collider != null&& _ok == false)
         {
             Enemystop();
             _anim.Play("EnemyAttack");
-            Debug.Log(_hit.collider);
+            
         }
 
        
 
     }
-
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
+    }
 }
