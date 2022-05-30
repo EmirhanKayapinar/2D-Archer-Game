@@ -7,6 +7,7 @@ public class OkCollision : MonoBehaviour
     [SerializeField] float _maxDistance;
     [SerializeField] LayerMask _kaleLayer;
     [SerializeField] Transform _raycastTrans;
+    GameObject _score;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Dusman"))
@@ -14,6 +15,7 @@ public class OkCollision : MonoBehaviour
             Destroy(gameObject);
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<EnemyController>()._anim.Play("EnemyDead");
+            _score.GetComponent<ScoreController>().Score();
             collision.gameObject.GetComponent<EnemyController>().Enemystop();
         }
         if (collision.gameObject.CompareTag("Dusman1"))
@@ -21,6 +23,7 @@ public class OkCollision : MonoBehaviour
             Destroy(gameObject);
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<Enemy2Controller>()._anim.Play("Enemy2Dead");
+            _score.GetComponent<ScoreController>().Score2();
         }
     }
 
@@ -32,6 +35,7 @@ public class OkCollision : MonoBehaviour
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<EnemyController>().Enemystop();
             collision.gameObject.GetComponent<EnemyController>()._anim.Play("EnemyDead");
+            _score.GetComponent<ScoreController>().Score();
             collision.gameObject.GetComponent<EnemyController>()._ok = true;
         }
         if (collision.gameObject.CompareTag("Dusman1"))
@@ -40,6 +44,7 @@ public class OkCollision : MonoBehaviour
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<Enemy2Controller>().Enemystop();
             collision.gameObject.GetComponent<Enemy2Controller>()._anim.Play("Enemy2Dead");
+            _score.GetComponent<ScoreController>().Score2();
             collision.gameObject.GetComponent<Enemy2Controller>()._ok = true;
         }
     }
@@ -64,4 +69,9 @@ public class OkCollision : MonoBehaviour
     //{
     //    Raycast();
     //}
+
+    private void Start()
+    {
+        _score = GameObject.FindGameObjectWithTag("Score");
+    }
 }

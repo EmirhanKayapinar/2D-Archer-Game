@@ -18,7 +18,7 @@ public class OkHiz : MonoBehaviour
         _mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
         _direction = _mousePos - transform.position;
-        _rotation = transform.position - _mousePos;
+        _rotation = -transform.position + _mousePos;
         _rb.velocity = new Vector2(_direction.x, _direction.y).normalized * force;
         float rot = Mathf.Atan2(_rotation.y, _rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot );

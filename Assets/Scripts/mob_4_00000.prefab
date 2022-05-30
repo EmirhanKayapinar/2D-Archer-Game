@@ -244,11 +244,12 @@ MonoBehaviour:
   _baloncuk: {fileID: 3541206209576949049}
   _anim: {fileID: 3541206209582832956}
   _col: {fileID: 3541206209582832957}
-  _maxDistance: 3
+  _maxDistance: 0.5
   _kaleLayer:
     serializedVersion: 2
     m_Bits: 64
   _raycastTrans: {fileID: 3541206210912150350}
+  _ok: 0
 --- !u!1 &3541206210912150351
 GameObject:
   m_ObjectHideFlags: 0

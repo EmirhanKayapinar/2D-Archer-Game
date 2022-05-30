@@ -237,11 +237,12 @@ MonoBehaviour:
   _baloncuk: {fileID: 6479974843739013776}
   _anim: {fileID: 6479974844790943541}
   _col: {fileID: 6479974844790943530}
-  _maxDistance: 5
+  _maxDistance: 0.5
   _kaleLayer:
     serializedVersion: 2
     m_Bits: 64
   _raycastTrans: {fileID: 6479974843726776995}
+  _ok: 0
 --- !u!50 &6479974844790943531
 Rigidbody2D:
   serializedVersion: 4

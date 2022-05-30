@@ -14,6 +14,7 @@ public class Enemy2Controller : MonoBehaviour
     [SerializeField] float _maxDistance;
     [SerializeField] LayerMask _kaleLayer;
     [SerializeField] Transform _raycastTrans;
+    GameObject _healthControl;
     public bool _ok;
     bool _diken, _zemin;
     void EnemyMoveUp()
@@ -84,5 +85,12 @@ public class Enemy2Controller : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-
+    public void Attack()
+    {
+        _healthControl.GetComponent<HealthController>().Health2();
+    }
+    private void Start()
+    {
+        _healthControl = GameObject.FindGameObjectWithTag("Health");
+    }
 }

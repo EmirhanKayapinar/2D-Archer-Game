@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float _maxDistance;
     [SerializeField] LayerMask _kaleLayer;
     [SerializeField] Transform _raycastTrans;
+    GameObject _healthControl;
     public bool _ok;
     void EnemyMoveUp()
     {
@@ -76,6 +77,7 @@ public class EnemyController : MonoBehaviour
             Enemystop();
             _anim.Play("EnemyAttack");
             
+            
         }
 
        
@@ -84,5 +86,16 @@ public class EnemyController : MonoBehaviour
     public void Destroy()
     {
         Destroy(this.gameObject);
+    }
+    public void Attack()
+    {
+        _healthControl.GetComponent<HealthController>().Health();
+        
+
+    }
+    private void Start()
+    {
+        _healthControl = GameObject.FindGameObjectWithTag("Health");
+       
     }
 }

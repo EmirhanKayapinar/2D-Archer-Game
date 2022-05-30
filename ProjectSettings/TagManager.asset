@@ -10,6 +10,8 @@ TagManager:
   - Dusman
   - Castle
   - Dusman1
+  - Health
+  - Score
   layers:
   - Default
   - TransparentFX

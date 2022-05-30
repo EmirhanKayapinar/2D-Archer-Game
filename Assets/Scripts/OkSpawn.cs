@@ -20,7 +20,7 @@ public class OkSpawn : MonoBehaviour
     
     public void Ok()
     {
-        Instantiate(_ok, _okSpawner.transform.position, _okSpawner.transform.rotation);
+        Instantiate(_ok, _okSpawner.transform.position, (_okSpawner.transform.rotation));
     }
     IEnumerator AsyncControl()
     { 
