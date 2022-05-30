@@ -12,7 +12,7 @@ public class HealthController : MonoBehaviour
     
     public void Health()
     {
-        _slider.value -= 2;
+        _slider.value -= 5;
         if (_slider.value <0.1)
         {
             _gameOverPanel.SetActive(true);
@@ -23,7 +23,7 @@ public class HealthController : MonoBehaviour
     
     public void Health2()
     {
-        _slider.value -= 5;
+        _slider.value -= 10;
         if (_slider.value < 0.1)
         {
             _gameOverPanel.SetActive(true);
